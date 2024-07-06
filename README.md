@@ -6,13 +6,38 @@ This project contains a dockerized sentiment analysis application with a Flask A
 
 - Docker
 - Docker Compose
-- Access to the provided Google Colab worksheet
+- Free ngrok account
+- Access to the provided Google Colab worksheet: [Sentiment Analysis Colab](https://colab.research.google.com/drive/1Mw94LlDDHlBJlecOunbtcpgOTQC2nhL0?usp=sharing)
+- Git installed on your local machine
+
+## Getting Started
+
+1. Clone the repository to your local machine:
+   ```
+   git clone https://github.com/ManishaJohnson/sentiment-analysis-docker.git
+   ```
+
+2. Navigate to the project directory:
+   ```
+   cd sentiment-analysis-docker
+   ```
+
+## Setting up ngrok
+
+1. Sign up for a free ngrok account at [https://ngrok.com/](https://ngrok.com/).
+2. After signing up, go to the [ngrok dashboard](https://dashboard.ngrok.com/get-started/your-authtoken).
+3. Copy your authtoken. You'll need this for the Google Colab setup.
 
 ## Setting up Google Colab
 
-1. Open the Google Colab worksheet provided to you.
-2. Run all the cells in the worksheet. This will set up the sentiment analysis model and create an ngrok tunnel.
-3. After running all cells, you will see an ngrok URL displayed. Copy this URL.
+1. Open the [Sentiment Analysis Colab worksheet](https://colab.research.google.com/drive/1Mw94LlDDHlBJlecOunbtcpgOTQC2nhL0?usp=sharing).
+2. In the notebook, find the cell that contains the ngrok authtoken command. It should look like this:
+   ```
+   !ngrok authtoken YOUR_TOKEN_HERE
+   ```
+3. Replace `YOUR_TOKEN_HERE` with your ngrok authtoken that you copied earlier.
+4. Run all the cells in the worksheet. This will set up the sentiment analysis model and create an ngrok tunnel.
+5. After running all cells, you will see an ngrok URL displayed. Copy this URL.
 
 ## Updating the API with ngrok URL
 
@@ -100,3 +125,4 @@ This will stop and remove the containers, but preserve the database volume.
 - The UI is accessible at `http://localhost:3000`.
 - Any changes to the code will require rebuilding the Docker images.
 - Remember to update the ngrok URL in `senti_ui_api.py` if you restart your Google Colab session, as the URL will change.
+- The free ngrok plan has usage limits. If you encounter issues related to ngrok, you may need to wait or consider upgrading your plan.
