@@ -1,0 +1,30 @@
+# Conda environment
+/envs/
+*.conda
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Node modules (for React app)
+node_modules/
+
+# Build directories
+build/
+dist/
+
+# Database
+*.db
+
+# Environment variables
+.env
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints

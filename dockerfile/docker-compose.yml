@@ -1,0 +1,21 @@
+version: '3'
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: dockerfile/api.Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      - FLASK_ENV=production
+    volumes:
+      - ../sentiment_analysis.db:/app/sentiment_analysis.db
+
+  ui:
+    build:
+      context: ..
+      dockerfile: dockerfile/ui.Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
